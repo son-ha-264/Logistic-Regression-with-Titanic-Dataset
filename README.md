@@ -1,4 +1,4 @@
-# Logistic Regression with Titanic Dataset
+# Logistic Regression with Titanic Dataset using R
 
 
 The aim of this notebook is to use every trick that I know about Logistic Regression, from data preprocessing to feature selection and so on, to achieve performance that is comparable to other more powerful algorithms such as Random Forest. Through this I want to prove that there are a lot more to analysing a dataset than just using the most powerful algorithms out there.
@@ -14,4 +14,8 @@ The raw data of the first 10 rows is presented above. Immediately there are a fe
   - Remove the columns that is not necessary for our analysis: PassengerId, Name and Ticket. 
   - Deal with missing data.
 
-The second step of preprocessing is to deal with missing data. There are missing data in 3 columns: **cabin**,**Embarked** and **Age** that can be dealt with in 3 different ways. First of all
+There are three columns with missing data: **Cabin**, **Age** and **Embarked**, which we will use different methods of imputation to deal with. Column **Age** consists of numerical values, so **mean imputation** is sensible here since this does not change the overall mean. We simply replace any NAs with mean of non-NA entries in the same column. On the other hand, **Embarked**, denoting the port of embarkation, is a **categorical variable**, so we will impute missing values with **the most common value**, in this case is 'S'. 
+
+Compared the above two columns, **Cabin** has too many missing values (687 missing out of 891 entries). It would be sensible to remove this column as well since any attempt to impute would lead to worse model performance.
+
+The figure below is the table and its summary after preprocessing. It certainly looks much better after just two simple steps
