@@ -10,8 +10,8 @@ The dataset in question is the famous [Titanic dataset](https://www.kaggle.com/c
 
 The raw data of the first 10 rows is presented above. Immediately there are a few things we can do:
   - Remove the columns that is not necessary for our analysis: PassengerId, Name and Ticket. 
-  - Fill out the NULLs in each column or remove the column entirely if it is too sparse.
+  - Deal with missing data.
 
-Removing PassengerId is a no-brainer, since it is just the index of each row and convey no information. On the other hand, Name and Ticket number does contain some useful information, albeit very little and requires a great deal of effort to extract. I have tried feature engineeering from Name and Ticket but they do not make significant enough improvements to our model, so I decide to remove them. 
+Regarding our first point, removing **PassengerId** is a no-brainer, since it is just the index of each row and convey no information. On the other hand, **Name** and **Ticket** number does contain some useful information, albeit very little and requires a great deal of effort to extract. I have tried feature engineeering from **Name** and **Ticket** but they do not make significant enough improvements to our model, so I decide to remove them. 
 
-
+The second step of preprocessing is to deal with missing data. There are missing data in 3 columns: **cabin**,**Embarked** and **Age** that can be dealt with in 3 different ways. First of all
