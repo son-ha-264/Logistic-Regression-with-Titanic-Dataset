@@ -6,12 +6,14 @@ The aim of this notebook is to use every trick that I know about Logistic Regres
 The dataset in question is the famous [Titanic dataset](https://www.kaggle.com/c/titanic/overview). We are going to use our model to predict whether a passenger survived the accident or not.
 ## 1. Load the dataset and some basic preprocessing
 
+
 ![screen](pic/df_1.png)
+
 
 The raw data of the first 10 rows is presented above. Immediately there are a few things we can do:
   - Remove the columns that is not necessary for our analysis: PassengerId, Name and Ticket. 
   - Deal with missing data.
 
-Regarding our first point, removing **PassengerId** is a no-brainer, since it is just the index of each row and convey no information. On the other hand, **Name** and **Ticket** number does contain some useful information, albeit very little and requires a great deal of effort to extract. I have tried feature engineeering from **Name** and **Ticket** but they do not make significant enough improvements to our model, so I decide to remove them. 
+Removing **PassengerId** is a no-brainer, since it is just the index of each row and convey no information. On the other hand, **Name** and **Ticket** number does contain some useful information, albeit very little and requires a great deal of effort to extract. I have tried feature engineeering from **Name** and **Ticket** but they do not make significant enough improvements to our model, so I decide to remove them. 
 
 The second step of preprocessing is to deal with missing data. There are missing data in 3 columns: **cabin**,**Embarked** and **Age** that can be dealt with in 3 different ways. First of all
