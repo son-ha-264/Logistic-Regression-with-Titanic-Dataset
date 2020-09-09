@@ -14,10 +14,10 @@ Combining the train set and test set, the raw data of the first 10 rows is prese
 
 There are 4 columns with missing data: **Age**,**Fare**,**Cabin**,**Embarked**. **Cabin** has 1014 missing values in a total of 1309 data points. We remove this column because it is so sparse. **Embarked** is a categorical variable with 2 missing value, hence we impute with the most common value 'S'. **Fare**, on the other hand, is a numerical variable with one missing value, which we impute using the mean of the entire column to preserve the mean after imputation.
 
-**Age** is a numerical value as well. But if we apply mean imputation we can see the distribution of Age changes drastically. This is because of high number of missing values.
+**Age** is a numerical value as well. But if we apply mean imputation we can see the distribution of Age changes drastically. This is because of higher number of missing values compared to **Fare**.
 
+![screen](pic/hist_1.png)
 
+Let's try another imputation method: Multivariate Imputation by Chained Equation ([MICE](https://cran.r-project.org/web/packages/mice/mice.pdf)). MICE assumes that the data is Missing At Random, meaning the probability of missing data of a variable is dependent on the other variables. Hence, say if we have variables X1,X2,...Xn, and X1 is the missing value, we can predict what X1 is using a model trained on X2,..,Xn. 
 
-
-
-
+Imputing Age with MICE results in almost the same distribution of Age, which is a much better result.
