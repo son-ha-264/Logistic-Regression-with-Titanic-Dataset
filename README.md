@@ -27,7 +27,11 @@ Imputing **Age** with MICE results in almost the same distribution of Age, which
 ## 2.Exploratory Analysis
 
 <p float="left">
-  <img src="pic/plot_sex.jpg" width="300" />
-  <img src="pic/plot_pclass.jpg" width="300" /> 
-  <img src="pic/plot_sibsp.jpg" width="300" /> 
+  <img src="pic/plot_sex.jpg" width="250" />
+  <img src="pic/plot_pclass.jpg" width="250" /> 
+  <img src="pic/plot_sibsp.jpg" width="250" /> 
+</p>
+<p float="left">
+  <img src="pic/parch.jpg" width="400" />
+  <img src="pic/plot_embarked.jpg" width="400" /> 
 </p>
