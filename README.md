@@ -6,14 +6,18 @@ The dataset in question in question is the famous [Titanic dataset](https://www.
 
 ![screen](pic/df_1.png)
 
-The raw data of the first 10 rows is presented above. Immediately there are a few things we can do:
-  - Remove the columns that is not necessary for our analysis: PassengerId, Name and Ticket. 
-  - Deal with missing data.
+Combining the train set and test set, the raw data of the first 10 rows is presented above. Immediately there are a few things we can do:
+  - Remove the columns that is not necessary for our analysis: **PassengerId**, **Name** and **Ticket**. 
+  - Deal with missing data. We will discuss this in details in the section below.
+  
+### 1.1. Dealing with missing data
 
-There are three columns with missing data: **Cabin**, **Age** and **Embarked**, which we will use different methods of imputation to deal with. Column **Age** consists of numerical values, so **mean imputation** is sensible here since this does not change the overall mean. We simply replace any NAs with mean of non-NA entries in the same column. On the other hand, **Embarked**, denoting the port of embarkation, is a **categorical variable**, so we will impute missing values with **the most common value**, in this case is 'S'. 
+There are 4 columns with missing data: **Age**,**Fare**,**Cabin**,**Embarked**. **Cabin** has 1014 missing values in a total of 1309 data points. We remove this column because it is so sparse. **Embarked** is a categorical variable with 2 missing value, hence we impute with the most common value 'S'. **Fare**, on the other hand, is a numerical variable with one missing value, which we impute using the mean of the entire column to preserve the mean after imputation.
 
-Compared the above two columns, **Cabin** has too many missing values (687 missing out of 891 entries). It would be sensible to remove this column as well since any attempt to impute would lead to worse model performance.
+**Age** is a numerical value as well. But if we apply mean imputation we can see the distribution of Age changes drastically. This is because of high number of missing values.
 
-The figure below is the table and its summary after preprocessing. It certainly looks much better after just two simple steps.
 
-![screen](pic/df_2.png)
+
+
+
+
