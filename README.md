@@ -32,6 +32,6 @@ Imputing **Age** with MICE results in almost the same distribution of Age, which
   <img src="pic/plot_sibsp.jpg" width="250" /> 
 </p>
 <p float="left">
-  <img src="pic/parch.jpg" width="400" />
-  <img src="pic/plot_embarked.jpg" width="400" /> 
+  <img src="pic/parch.png" width="400" />
+  <img src="pic/plot_embarked.png" width="400" /> 
 </p>
