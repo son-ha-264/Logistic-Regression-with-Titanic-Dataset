@@ -20,4 +20,8 @@ There are 4 columns with missing data: **Age**,**Fare**,**Cabin**,**Embarked**. 
 
 Let's try another imputation method: Multivariate Imputation by Chained Equation ([MICE](https://cran.r-project.org/web/packages/mice/mice.pdf)). MICE assumes that the data is Missing At Random, meaning the probability of missing data of a variable is dependent on the other variables. Hence, say if we have variables X1,X2,...Xn, and X1 is the missing value, we can predict what X1 is using a model trained on X2,..,Xn. 
 
-Imputing Age with MICE results in almost the same distribution of Age, which is a much better result.
+Imputing **Age** with MICE results in almost the same distribution of Age, which is a much better result.
+
+![screen](pic/hist_2.png)
+
+## 2.Exploratory Analysis
