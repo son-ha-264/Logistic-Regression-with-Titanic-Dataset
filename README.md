@@ -48,3 +48,9 @@ We can try to feature engineer another variable 'Family Size' ( idea borrowed fr
 
 We end up with the below table ready for model fitting and prediction.
 
+![screen](pic/df_3.png)
+
+## 3. Model Fitting and Variable Selection
+
+Even though we are using the same method of Logistic Regression, the **Statistical** and the **Machine Learning** way of approaching Logistic Regression is rather different. Machine Learning approach focus on minimising a certain **objective function** to achieve good prediction result on a test set base on an error metric. On the other hand, Statistical approach aims to maximise the **likelihood function**, and use statistical tests to determine which variables should be kept. For this notebook, since the dataset is not large and the number of variables are quite low, I will try to use the statistical approach.
+
