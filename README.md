@@ -1,6 +1,6 @@
 # Logistic Regression with Titanic Dataset using R
 
-The dataset in question in question is the famous [Titanic dataset](https://www.kaggle.com/c/titanic/overview). We are going to perform some data preprocessing/cleaning and fit a Logistic Regression model to predict whether a passenger survivied the accident or not.
+The dataset in question in question is the famous [Titanic dataset](https://www.kaggle.com/c/titanic/overview). We are going to perform some data preprocessing/cleaning and fit a Logistic Regression model to predict whether a passenger survivied the accident or not. Information on the dataset and the meaning of each variables can be found in the hyperlink.
 
 ## 1. Load the dataset and some basic preprocessing
 
@@ -35,3 +35,11 @@ Imputing **Age** with MICE results in almost the same distribution of Age, which
   <img src="pic/parch.png" width="400" />
   <img src="pic/plot_embarked.png" width="400" /> 
 </p>
+<p float="left">
+  <img src="pic/plot_age.png" width="400" />
+  <img src="pic/plot_fare.png" width="400" /> 
+</p>
+
+The first 5 bar charts are counts of survivors and non-survivors with respect to **Sex**, **Pclass**,**SibSp**,**Parch** and **Embarked**. The last two are scatterplots of Survival against Age and Fare. We can observe that women, higher class ticket owners and those embarked from Cherbourg and Southhampton were more likely to survive. Those with only one Parent/Children or Sibling/Spouse were less likely to survive. Lastly, ticket fare does not seem not say much about survival probability. 
+
+We can try to feature engineer another variable 'Family Size' ( idea borrowed from this [this fantastic notebook](https://www.kaggle.com/mrisdal/exploring-survival-on-the-titanic/)), which is calculated by: Family_Size = 1 + SibSp + Parch. Plotting the bar chart reveals an interesting pattern: family with size 2, 3, 4 were more likely to survive than other family size (either singleton or more than 4). To better refelct this observation, we set family size variable **Fsize** = 'medium' if family has size 2, 3, 4, 'single' if family group only has one member, and 'large' if family has size more than 4.
