@@ -56,3 +56,7 @@ Machine Learning approach aims to find the parameters to minimise an Objective f
 
 At first fitting Logistic Regression using all variables as explanatory variables to predict **Survived**, we obtain 2 tables below, one is the summary table, and the other is the Analysis of Deviance table: 
 
+![screen](pic/table_1.png)
+![screen](pic/table_2.png)
+
+There are a lot of information we can unpack here! In the summary table (left table), we can see the column 'Estimate', which is the estimate for our parameters. The last column of the same table is the p-value for the Wald test that the parameter is 0.
