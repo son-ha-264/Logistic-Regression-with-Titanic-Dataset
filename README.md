@@ -52,5 +52,7 @@ We end up with the below table ready for model fitting and prediction.
 
 ## 3. Model Fitting and Variable Selection
 
-Even though we are using the same method of Logistic Regression, the **Statistical** and the **Machine Learning** way of approaching Logistic Regression is rather different. Machine Learning approach focus on minimising a certain **objective function** to achieve good prediction result on a test set base on an error metric. On the other hand, Statistical approach aims to maximise the **likelihood function**, and use statistical tests to determine which variables should be kept. For this notebook, since the dataset is not large and the number of variables are quite low, I will try to use the statistical approach.
+Machine Learning approach aims to find the parameters to minimise an Objective function. On the other hand the statistical approach finds the Maximum Likelihood Estimator (MLE) of the parameters. Mathematically when it comes to Logistic Regression, both approaches are very much the same, since minimising the empirical risk associated with the log loss (ML objective) is equivalent to maximising the Likelihood function (Statistical method objective). For this notebook I will perform model selection using statistical methods in R.
+
+At first fitting Logistic Regression using all variables as explanatory variables to predict **Survived**, we obtain 2 tables below, one is the summary table, and the other is the Analysis of Deviance table: 
 
