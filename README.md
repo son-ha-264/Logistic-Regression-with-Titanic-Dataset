@@ -52,7 +52,7 @@ We end up with the below table ready for model fitting and prediction.
 
 ![screen](pic/df_3.png)
 
-## 2.5 Logistic Regression: Machine Learning perspective vs Statistical perspective 
+## 2.5. Logistic Regression: Machine Learning perspective vs Statistical perspective 
 
 In this section I am going to hightlight the differences in the way Logistic Regression is defined in Machine Learning and Statistics. This is not in the process of analysing the dataset. Rather my aim is to provide context for those who might be familiar with only one perspective but not the other.
 
