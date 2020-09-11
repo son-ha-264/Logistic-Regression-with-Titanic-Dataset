@@ -2,7 +2,7 @@
 
 The dataset in question in question is the famous [Titanic dataset](https://www.kaggle.com/c/titanic/overview). We are going to perform some data preprocessing/cleaning and fit a Logistic Regression model to predict whether a passenger survivied the accident or not. Information on the dataset and the meaning of each variables can be found in the hyperlink
 
-This notebook use traditional statistical methods such as statistical tests, ANOVA table, AIC to find the correct variables for logistic regression. The link for the code can be found [here](https://www.kaggle.com/sonha264/logistic-regression-titanic-dataset) . I choose R for this notebook instead of Python since R is more powerful when it comes to statistical analysis.
+This notebook use traditional statistical methods such as goodness-of-fit tests, ANOVA table, AIC to find the correct variables for logistic regression. The link for the code can be found [here](https://www.kaggle.com/sonha264/logistic-regression-titanic-dataset) . I choose R for this notebook instead of Python since R is more powerful when it comes to statistical analysis.
 
 ## 1. Load the dataset and some basic preprocessing
 
@@ -52,9 +52,21 @@ We end up with the below table ready for model fitting and prediction.
 
 ![screen](pic/df_3.png)
 
+## 2.5 Logistic Regression: Machine Learning perspective vs Statistical perspective 
+
+In this section I am going to hightlight the differences in the way Logistic Regression is defined in Machine Learning and Statistics. This is not in the process of analysing the dataset. Rather my aim is to provide context for those who might be familiar with only one perspective but not the other.
+
+In Machine Learning, Logistic Regression is a form of Discriminative Learning. It aims to predict the conditional probability of each label inferred from the observed dataset. The parameters are estimated by minimising an objective function using an optimisation algorithm (e.g gradient descent).
+
+In Statistics, Logistic Regression is a Generalised Linear Model (GLM) with Bernoulli likelihood and logit link function. The parameters are estimated by maximising the likelihood function. These estimates are called Maximum Likelihood Estimation.
+
+Even though the contexts are different, the Maths behind it tries to achieve the same goal. This is because maximising the conditional log likelihood function of this particular GLM is equivalent to minimising the empirical risk associated with the log-loss (which is the objective function). Various documentations have mathematical explanation of this claim. For those curious, [Oxford](http://www.stats.ox.ac.uk/~palamara/teaching/SML20/HT20_lecture9.pdf) has a detailed explanation of the maths behind this.   
+
+Another difference comes from the way models are compared in each field. Machine Learning is all about prediction. The model that performs better on the test set is usually favoured.   
+
 ## 3. Model Fitting and Variable Selection
 
-Machine Learning approach aims to find the parameters to minimise an Objective function. On the other hand Statistical approach finds the parameters to maximise the likelihood function. Mathematically when it comes to Logistic Regression, both approaches are very much the same, since minimising the empirical risk associated with the log loss (ML objective) is equivalent to maximising the Likelihood function (Statistical method objective). For this notebook I will perform model selection using statistical methods in R.
+Logistic Regression seems like a good model for this dataset, since the output **Survived** is binary (either 0 or 1) and we are trying to predict that using a number of explanatory variables. I will perform variable selection for Logistic model using statistical methods in R.
 
 At first fitting Logistic Regression using all variables as explanatory variables to predict **Survived**, we obtain 2 tables below, one is the summary table, and the other is the Analysis of Deviance table: 
 
