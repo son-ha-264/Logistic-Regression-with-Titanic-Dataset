@@ -62,7 +62,11 @@ In Statistics, Logistic Regression is a Generalised Linear Model (GLM) with Bern
 
 Even though the contexts are different, the Maths behind it tries to achieve the same goal. This is because maximising the conditional log likelihood function of this particular GLM is equivalent to minimising the empirical risk associated with the log-loss (which is the objective function). Various documentations have mathematical explanation of this claim. For those curious, [Oxford](http://www.stats.ox.ac.uk/~palamara/teaching/SML20/HT20_lecture9.pdf) has a detailed explanation of the maths behind this.   
 
-Another difference comes from the way models are compared in each field. Machine Learning is all about prediction. The model that performs better on the test set is usually favoured.   
+Another difference comes from the way models are compared in each field. Machine Learning is all about **prediction**. The model that performs better on the test set is usually favoured. As a result, error metric (MSE,MAE,...) are utilised to decide which model is preferred.
+
+On the other hand, Statistics aims to **describe** the data at hand to find the relationship between variables. Of course we can still predict if we have fit a model, but that is generally not the final goal. Hence, models are compared through 'goodness of fit' - how well the model fit the data, and vastly different tests are used to select the best model (AIC, BIC, chi-squared test,...).
+
+Because most tasks nowadays involve **prediction** rather than **description**, Machine Learning approach is generally favoured over Statistical approach. But it is always good to have context on both approach because the two fields share a lot of the same ideas.
 
 ## 3. Model Fitting and Variable Selection
 
