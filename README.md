@@ -67,4 +67,21 @@ The second table is the ANOVA table. The idea is that we read the table from top
 
 Let's use another metric to really make sure what variable we want to include in our final model: Akaike Information Criterion (AIC). AIC is a popular and powerful metric to compare between models because it not only rewards goodness of fit of the model, but it also penalises overfitting. AIC can be read at the bottom of the summary table, and model with lower AIC tends to be favoured. R has a function 'stepAIC' that manually searches through all combinations of the variables and find which combination leads to the lowest AIC. through that we obtain **Survived** ~ **Pclass** + **Sex** + **Age** + **Fsize** + **Parch** as the model with the lowest AIC. 
 
-That sounds fairly consistent with our exploratory analysis, the Wald test and the ANOVA table. Fitting the logitic reression again with only these variables obtained through 'stepAIC' we obtain the following tables 
+That sounds fairly consistent with our exploratory analysis, the Wald test and the ANOVA table. Fitting the logitic reression again with only these variables obtained through 'stepAIC' we obtain the following tables:
+
+![screen](pic/table_3.png)
+![screen](pic/table_4.png)
+
+This model has the lowest AIC, and the ANOVA table shows the addition of all of the chosen variables are significant. The p-values of the Wald test also suggests all variables are significant EXCEPT for **parch**. Still I think the inclusion of **parch** is necessary because we follow the result of AIC and the ANOVA table. Most of the time the Wald test only acts as a guideline and is not as definitive as AIC or ANOVA table can be. In fact, young and Smith (2005) write: “There is no clear-cut theory to establish which procedure is best, but there is a substantial body of literature pointing towards the conclusion that […] the likelihood ratio procedure (ANOVA) has the best agreement between the true and asymptotic distributions.”
+
+In this section we have performed variable selection based on a variety of criteria: AIC, ANOVA table and Wald test. There are a lot more metrics available such as r-squared score, BIC, ... but I am happy with what we have chosen to work with. It is crucial to remember none of the criteria offers a definitive answer on which variable should be included in our model. As a result, it is good practice to use more than one methods when it comes to variable selection.
+
+## 4. Predict survival of passengers
+
+The rest of the task is straightforward, given a test set we use our model to predict the survival. Predicting using the dataset on Kaggle gives a score of 77.3% correct answers, which is a fairly good score for Logistic Regression model.
+
+So how can we improve from here? An obvious way is to use more powerful models. Tree-based model such as Random Forests and boosting algorithm such as Gradient Boosting are currently state-of-the-art predictive model. Their flexibility and sheer number of parameters help them outperform Logistic Regression almost always. But if you want to squeeze some extra percentage out of our Logisitic Model, there are still some more minor improvements we can do: Feature Engineering more features (especially from **Name** and **Ticket**), using regularisation, etc. 
+
+## 5. Conclusion 
+
+We have performed a thorough statistical analysis of the titanic dataset and predicted survival of passengers. Thanks to our good methods of feature engineering and variable selction we performed fairly well with a simple model like Logistic Regression.
