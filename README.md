@@ -2,7 +2,7 @@
 
 The dataset in question in question is the famous [Titanic dataset](https://www.kaggle.com/c/titanic/overview). We are going to perform some data preprocessing/cleaning and fit a Logistic Regression model to predict whether a passenger survivied the accident or not. Information on the dataset and the meaning of each variables can be found in the hyperlink
 
-This notebook use traditional statistical methods such as statistical tests, ANOVA table, AIC to find the correct variables for logistic regression. The link for the code can be found at... . I choose R for this notebook instead of Python since R is more powerful when it comes to statistical analysis.
+This notebook use traditional statistical methods such as statistical tests, ANOVA table, AIC to find the correct variables for logistic regression. The link for the code can be found [here](https://www.kaggle.com/sonha264/logistic-regression-titanic-dataset) . I choose R for this notebook instead of Python since R is more powerful when it comes to statistical analysis.
 
 ## 1. Load the dataset and some basic preprocessing
 
